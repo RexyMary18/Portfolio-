@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agnes Rexy Mary J – FinTech API Integration &amp; Full Stack Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#eef2f6;--surface:#fff;--ink:#16213e;--muted:#55627c;--line:#d5dce8;--accent:#1f3fbf;--accent-ink:#fff;--warm:#c2410c;--code-bg:#16213e;--code-ink:#dbe4ff;--code-key:#8fb0ff;--code-str:#ffc98a;--code-ok:#7ee0a8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1526;--surface:#18203a;--ink:#e8ecf8;--muted:#9aa6c4;--line:#2a3558;--accent:#8fb0ff;--accent-ink:#0f1526;--warm:#fb923c;--code-bg:#0a0f1d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1526;--surface:#18203a;--ink:#e8ecf8;--muted:#9aa6c4;--line:#2a3558;--accent:#8fb0ff;--accent-ink:#0f1526;--warm:#fb923c;--code-bg:#0a0f1d;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 Figtree,system-ui,sans-serif}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;align-items:center;padding:1rem 0;font-weight:500}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+nav .brand{color:var(--ink);font:800 1.1rem Bricolage Grotesque,sans-serif;margin-right:auto}
+h1,h2,h3{font-family:Bricolage Grotesque,system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:700;margin-bottom:1.5rem}
+h3{font-size:1.2rem;font-weight:700}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;align-items:center;padding:3rem 0 4rem}
+.role{color:var(--muted);font-size:1.15rem;margin:1rem 0 1.5rem;max-width:34ch}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{color:var(--accent)}
+.api{background:var(--code-bg);color:var(--code-ink);border-radius:12px;font:400 .85rem/1.65 "JetBrains Mono",ui-monospace,monospace;overflow:hidden;box-shadow:0 18px 40px -20px rgba(22,33,62,.5)}
+.api .bar{display:flex;justify-content:space-between;gap:.5rem;padding:.7rem 1rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.api .get{color:var(--code-ok);font-weight:500}
+.api .st{color:var(--code-ok)}
+.api pre{margin:0;padding:1rem;overflow-x:auto}
+.k{color:var(--code-key)}.s{color:var(--code-str)}
+.caret{display:inline-block;width:.5em;height:1em;background:var(--code-ink);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.caret{animation:none}html{scroll-behavior:auto}}
+section{padding:3rem 0;border-top:1px solid var(--line)}
+.about{max-width:68ch;font-size:1.1rem}
+.stats{display:flex;flex-wrap:wrap;gap:2rem;margin-top:1.5rem}
+.stats b{display:block;font:800 2rem Bricolage Grotesque,sans-serif;color:var(--accent)}
+.stats span{color:var(--muted);font-size:.9rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.25rem}
+.skill h3{margin-bottom:.6rem;font-size:1.05rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.chips li{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:.15rem .7rem;font-size:.88rem}
+.tl{border-left:3px solid var(--accent);margin-left:.4rem;padding-left:1.5rem;display:grid;gap:2rem}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:calc(-1.5rem - 9px);top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job .when{color:var(--warm);font-weight:600;font-size:.92rem}
+.job .org{color:var(--muted);margin:.15rem 0 .5rem}
+.job ul,.proj ul{margin:.4rem 0 0;padding-left:1.1rem}
+.job li,.proj li{margin-bottom:.3rem;max-width:75ch}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.25rem}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.4rem}
+.proj.feat{grid-column:1/-1;border:2px solid var(--accent)}
+.proj .stack{font:500 .82rem "JetBrains Mono",ui-monospace,monospace;color:var(--muted);margin:.4rem 0 .8rem}
+.proj .links{display:flex;gap:1rem;margin-top:1rem;font-weight:600}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.two ul{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
+.two li small{display:block;color:var(--muted)}
+.contact p{max-width:55ch}
+.contact .links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1rem}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:820px){.hero{grid-template-columns:1fr;padding-top:1.5rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main">
+<a class="brand" href="#top">Agnes Rexy Mary J</a>
+<a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+</nav>
+
+<header class="hero" id="top">
+<div>
+<h1>Agnes Rexy Mary J</h1>
+<p class="role">FinTech application support and API integration engineer who also builds full stack apps.</p>
+<div class="btns">
+<a class="btn p" href="#projects">See my projects</a>
+<a class="btn s" href="mailto:Agnesrexy20@gmail.com">Email me</a>
+</div>
+</div>
+<div class="api" role="img" aria-label="Sample API response describing Agnes: 4+ years in FinTech support, API testing and full stack development">
+<div class="bar"><span><span class="get">GET</span> /api/agnes</span><span class="st">200 OK</span></div>
+<pre>{
+  <span class="k">"role"</span>: <span class="s">"FinTech Support &amp; API Integration"</span>,
+  <span class="k">"experience"</span>: <span class="s">"4+ years"</span>,
+  <span class="k">"platforms"</span>: [<span class="s">"LOS"</span>, <span class="s">"LMS"</span>, <span class="s">"ALM"</span>, <span class="s">"SCF"</span>],
+  <span class="k">"tools"</span>: [<span class="s">"Swagger"</span>, <span class="s">"Postman"</span>, <span class="s">"Oracle SQL"</span>],
+  <span class="k">"stack"</span>: [<span class="s">"React"</span>, <span class="s">"Node"</span>, <span class="s">"Express"</span>, <span class="s">"MongoDB"</span>],
+  <span class="k">"location"</span>: <span class="s">"Chennai, India"</span>,
+  <span class="k">"open_to_work"</span>: true<span class="caret"></span>
+}</pre>
+</div>
+</header>
+
+<section id="about">
+<h2>About</h2>
+<p class="about">I have spent more than four years keeping lending and supply chain finance platforms running at Vivriti Capital. I find the cause of production incidents, test APIs before they reach users, and check the data in Oracle. I now build full stack apps with React and Node.js, so I want a role that joins FinTech, API integration, testing and development.</p>
+<div class="stats">
+<div><b>4+</b><span>years in FinTech</span></div>
+<div><b>4</b><span>platforms supported</span></div>
+<div><b>3</b><span>environments tested: Dev, QA, UAT</span></div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill"><h3>API and integration</h3><ul class="chips"><li>REST APIs</li><li>API integration</li><li>API testing</li><li>Swagger</li><li>Postman</li></ul></div>
+<div class="skill"><h3>Testing</h3><ul class="chips"><li>Manual</li><li>Functional</li><li>Integration</li><li>Regression</li><li>UAT</li><li>Dev/QA/UAT validation</li></ul></div>
+<div class="skill"><h3>FinTech domains</h3><ul class="chips"><li>LOS</li><li>LMS</li><li>ALM</li><li>SCF</li><li>Application support</li></ul></div>
+<div class="skill"><h3>Database</h3><ul class="chips"><li>Oracle</li><li>SQL</li><li>Data validation</li><li>Report extraction</li></ul></div>
+<div class="skill"><h3>Programming and web</h3><ul class="chips"><li>JavaScript</li><li>React.js</li><li>Node.js</li><li>Express.js</li><li>MongoDB</li><li>HTML</li><li>CSS</li></ul></div>
+<div class="skill"><h3>CRM</h3><ul class="chips"><li>Salesforce Sales Cloud</li><li>Service Cloud</li><li>Pardot</li><li>Administration</li></ul></div>
+<div class="skill"><h3>Tools</h3><ul class="chips"><li>Git</li><li>GitHub</li><li>JIRA</li><li>ManageEngine</li><li>WinSCP</li><li>PuTTY</li><li>Cursor AI</li></ul></div>
+</div>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<div class="tl">
+<div class="job">
+<h3>Application Support Engineer / Manual Test Engineer</h3>
+<div class="org">Vivriti Capital Limited</div>
+<div class="when">Apr 2022 – 2026</div>
+<ul>
+<li>Supported production FinTech apps (LOS, LMS, ALM, SCF): incident management, root-cause analysis and release validation using Oracle SQL, JIRA and ManageEngine.</li>
+<li>Wrote and ran functional, integration, regression and UAT test cases, and coordinated defects with dev, business and vendor teams.</li>
+</ul>
+</div>
+<div class="job">
+<h3>API Integration Team Member</h3>
+<div class="org">Vivriti Capital Limited</div>
+<div class="when">2024 – 2025</div>
+<ul>
+<li>Tested APIs with Swagger and Postman across Dev, QA and UAT, validating payloads, status codes and headers, and reported defects to vendors.</li>
+<li>Investigated API failures using responses and Oracle records, retested fixes, and used Git and Cursor AI.</li>
+</ul>
+</div>
+<div class="job">
+<h3>Application Support / Manual Tester / Salesforce CRM</h3>
+<div class="org">Vivriti Capital Limited</div>
+<div class="when">2022 – 2024</div>
+<ul>
+<li>Ran pre-release manual testing and administered Salesforce Sales and Service Cloud: users, permissions, workflows, reports and custom objects.</li>
+<li>Worked with vendors and business teams, kept process documentation, and earned Expeditioner Rank on Trailhead.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+<article class="proj feat">
+<h3>Real-Time News Alert App</h3>
+<div class="stack">React.js · Node.js · Express · MongoDB · JWT</div>
+<ul>
+<li>A MERN app where users pick news categories and alert frequency, and headlines reach a dashboard and email through NewsAPI and Nodemailer.</li>
+<li>JWT authentication, REST APIs, and a node-cron scheduler that avoids duplicate alerts. Deployed on Netlify and Render.</li>
+</ul>
+<div class="links">
+<a href="https://whimsical-piroshki-af190b.netlify.app" target="_blank" rel="noopener">Live demo</a>
+<a href="https://github.com/RexyMary18/news-alert-app" target="_blank" rel="noopener">GitHub</a>
+</div>
+</article>
+<article class="proj">
+<h3>Movie Review Application</h3>
+<div class="stack">React.js · JavaScript</div>
+<ul><li>Shows movie information and reviews.</li><li>Built from reusable components with an interactive interface.</li></ul>
+</article>
+<article class="proj">
+<h3>Notes Application</h3>
+<div class="stack">React.js · JavaScript</div>
+<ul><li>Create and manage notes.</li><li>Component-based, interactive interface.</li></ul>
+</article>
+</div>
+</section>
+
+<section id="education">
+<h2>Education and certifications</h2>
+<div class="two">
+<div>
+<h3 style="margin-bottom:1rem">Certifications</h3>
+<ul>
+<li>IIT-M Pravartak Certified Full Stack Development Course With AI Tools<small>GUVI, Sept 2026</small></li>
+<li>Certified Manual Tester<small>QSpiders Training Institute</small></li>
+<li>Expeditioner Rank<small>Salesforce Trailhead</small></li>
+</ul>
+</div>
+<div>
+<h3 style="margin-bottom:1rem">Education</h3>
+<ul>
+<li>B.E., Electronics and Communication Engineering, 73%<small>Panimalar Engineering College, Anna University, 2017 – 2021</small></li>
+<li>12th, 72.08%<small>St. Joseph Anglo Indian Higher Secondary School, 2017</small></li>
+<li>10th, 87.14%<small>St. Joseph Anglo Indian Higher Secondary School, 2015</small></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<p>I’m looking for a role that combines FinTech, API integration, testing and full stack development. Write to me and I’ll reply.</p>
+<div class="links">
+<a class="btn p" href="mailto:Agnesrexy20@gmail.com">Agnesrexy20@gmail.com</a>
+<a class="btn s" href="tel:+919094888772">+91 90948 88772</a>
+<a class="btn s" href="https://linkedin.com/in/agnes-rexy-989902191" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn s" href="https://github.com/RexyMary18" target="_blank" rel="noopener">GitHub</a>
+</div>
+</section>
+<footer>Agnes Rexy Mary J · Chennai, Tamil Nadu</footer>
+</div>
+</body>
+</html>
